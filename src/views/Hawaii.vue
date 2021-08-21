@@ -1,11 +1,11 @@
 <template>
-    <div class="about">
-        <h1> About </h1>
+    <div class="hawaii">
+        <h1>Hawaii</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'About'
+    name:'Hawaii'
 }
 </script>
