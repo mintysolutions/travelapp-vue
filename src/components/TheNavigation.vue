@@ -6,7 +6,6 @@
     <router-link to="/hawaii">Hawaii</router-link> 
     <router-link to="/panama">Panama</router-link> 
     <router-link to="/jamaica">Jamaica</router-link> 
-    <router-link to="/about">About</router-link>
   
   </div>
 </template>
@@ -16,3 +15,10 @@ export default {
     name:'TheNavigation'
 }
 </script>
+
+<style scoped>
+    .router-link-active{
+        color: white;
+        border-bottom: 2px solid white;
+    }
+</style>
