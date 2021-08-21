@@ -2,17 +2,28 @@
   <div id="nav">
 
     <router-link to="/">Home</router-link> 
-    <router-link to="/brazil">Brazil</router-link> 
-    <router-link to="/hawaii">Hawaii</router-link> 
-    <router-link to="/panama">Panama</router-link> 
-    <router-link to="/jamaica">Jamaica</router-link> 
-  
+    <router-link 
+        v-for="dest in destinations"
+        :key="dest.id"
+        :to="destinationRoute(dest.id)">
+        {{dest.name}}
+    </router-link> 
+ 
   </div>
 </template>
 
 <script>
+import RouteMixin from '@/mixins/route'
+import data from '@/data.json'
+
 export default {
-    name:'TheNavigation'
+    name:'TheNavigation',
+    mixins:[RouteMixin],
+    data(){
+        return {
+            destinations : data.destinations
+        }
+    }
 }
 </script>
 

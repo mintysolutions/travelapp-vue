@@ -4,11 +4,7 @@ import Home from '@/views/Home.vue'
 
 const routes = [
     { name:'Home', path:'/', component:Home },
-
-    { name:'Brazil', path:'/brazil', component:() => import('@/views/Brazil.vue')},
-    { name:'Hawaii', path:'/hawaii', component:() => import('@/views/Hawaii.vue') },
-    { name:'Jamaica', path:'/jamaica', component:() => import('@/views/Jamaica.vue') },
-    { name:'Panama', path:'/panama', component:() => import('@/views/Panama.vue') }
+    { name:'destination.show', path:'/destinations/:id',component:()=>import('@/views/DestinationShow.vue') },
 ]
 
 const router =  createRouter({
