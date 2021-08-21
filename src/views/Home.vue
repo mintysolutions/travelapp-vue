@@ -5,7 +5,7 @@
       <router-link
         v-for="dest in destinations"
         :key="dest.id"
-        :to="dest.slug"
+        :to="destinationRoute(dest.id)"
       > <h2>{{dest.name}}</h2>
         <img :src="`/images/${dest.image}`" alt="">
       </router-link>
@@ -15,10 +15,11 @@
 
 <script>
 import data from '@/data.json'
+import RouteMixins from '@/mixins/route' 
 
 export default {
   name:'Home',
-
+  mixins:[RouteMixins],
   data() {
     return {
       destinations: data.destinations
