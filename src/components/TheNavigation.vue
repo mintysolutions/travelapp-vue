@@ -5,7 +5,7 @@
     <router-link 
         v-for="dest in destinations"
         :key="dest.id"
-        :to="destinationRoute(dest.id)">
+        :to="destinationRoute(dest.slug)">
         {{dest.name}}
     </router-link> 
  

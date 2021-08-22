@@ -5,7 +5,7 @@
       <router-link
         v-for="dest in destinations"
         :key="dest.id"
-        :to="destinationRoute(dest.id)"
+        :to="destinationRoute(dest.slug)"
       > <h2>{{dest.name}}</h2>
         <img :src="`/images/${dest.image}`" alt="">
       </router-link>

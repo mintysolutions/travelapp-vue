@@ -1,5 +1,5 @@
 <template>
-  <section class="destination">
+  <section v-if="destination" :key="destination.id" class="destination">
       <h1>{{destination.name}}</h1>
       <div class="destination-details">
           <img :src="`/images/${destination.image}`" :alt="destination.name">
@@ -9,17 +9,23 @@
 </template>
 
 <script>
-import data from '@/data.json'
+import {getDestination} from '@/services/DestinationService'
 
 export default {
     name:'DestinationShow',
-    computed:{
-        destinationId(){
-            return parseInt(this.$route.params.id)
-        },
-        destination(){
-            return data.destinations.find(destination => this.destinationId === destination.id)
+    props:{
+        slug:{
+            type:String,
+            required:true
         }
+    },
+    data(){
+        return {
+            destination : null
+        }
+    },
+    async created(){
+        this.destination = await getDestination(this.slug)
     }
 }
 </script>
