@@ -1,10 +1,10 @@
 export default {
     methods:{
-        destinationRoute(id){
+        destinationRoute(slug){
             return {
-                name:'destination.show',
+                name:'destinationshow',
                 params : {
-                    id: id
+                    slug: slug
                 }
             }
         }
