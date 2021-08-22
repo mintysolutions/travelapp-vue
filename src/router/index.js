@@ -4,7 +4,14 @@ import Home from '@/views/Home.vue'
 
 const routes = [
     { name:'Home', path:'/', component:Home },
-    { name:'destination.show', path:'/destinations/:id',component:()=>import('@/views/DestinationShow.vue') },
+    
+    { 
+        name:'destinationshow',
+        props:route => {id: parseInt(route.params.id)},
+        path:'/destinations/:slug',
+        component:()=>import('@/views/DestinationShow.vue') 
+    }
+    
 ]
 
 const router =  createRouter({
